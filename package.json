@@ -4,7 +4,8 @@
   "description": "A simple project that provides essential configuration for weback to get everyday task done like sass compiling, assent bundling, minification etc",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [
     "webpack",
