@@ -1,0 +1,20 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "A simple project that provides essential configuration for weback to get everyday task done like sass compiling, assent bundling, minification etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-starter",
+    "webpack-configuration"
+  ],
+  "author": "Kamal Ahmed",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
