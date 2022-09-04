@@ -2,7 +2,7 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin'); // for minification and it is available from webpack version 5
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // it will extract css into sep. file
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // it will clean up our dist folder before generting new file with hashed name
-
+const HtmlWebpackPlugin  = require( 'html-webpack-plugin'); // it will update the html page with dynamic file name of css and js.
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -54,6 +54,7 @@ module.exports = {
             filename: 'bundle.[contenthash].css'
         }),
         new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin(),
     ]
 
 }
