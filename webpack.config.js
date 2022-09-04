@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin'); // for minification and it is available from webpack version 5
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // it will extract css into sep. file
 
 module.exports = {
     entry: './src/index.js',
@@ -23,13 +24,13 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader', 'css-loader'
+                    MiniCssExtractPlugin.loader, 'css-loader'
                 ]
             },
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader', 'css-loader', 'sass-loader'
+                    MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
                 ]
             },
             {
@@ -48,6 +49,9 @@ module.exports = {
     },
     plugins: [
         new TerserPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'bundle.css'
+        }),
     ]
 
 }
