@@ -1,4 +1,6 @@
-import sayHello from "./module";
-import showImage from "./imagemodule";
+import sayHello from "./components/module";
+import showImage from "./components/imagemodule";
+import './components/style.css';
+
 showImage();
 sayHello('Kamal');

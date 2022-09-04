@@ -19,6 +19,12 @@ module.exports = {
                         maxSize : 3 * 1024 // 3 Kilobite  or less file will be inlined
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader', 'css-loader'
+                ]
             }
         ]
     }
