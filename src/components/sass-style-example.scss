@@ -1,0 +1,9 @@
+$font-size: 20px;
+$background: gray;
+$padding: 10px;
+h1 {
+    color: brown;
+    font-size: $font-size;
+    background-color: $background;
+    padding: $padding;
+}
