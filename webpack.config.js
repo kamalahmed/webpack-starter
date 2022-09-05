@@ -13,6 +13,11 @@ module.exports = {
         publicPath: ''
     },
     mode: 'none',
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     devServer: {
         port:9000,
         static: {
