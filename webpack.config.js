@@ -3,14 +3,26 @@ const TerserPlugin = require('terser-webpack-plugin'); // for minification and i
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // it will extract css into sep. file
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // it will clean up our dist folder before generting new file with hashed name
 const HtmlWebpackPlugin  = require( 'html-webpack-plugin'); // it will update the html page with dynamic file name of css and js.
+
+const outputDirectoryPath = path.resolve(__dirname, './dist');
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.[contenthash].js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: 'dist/'
+        path: outputDirectoryPath,
+        publicPath: ''
     },
     mode: 'none',
+    devServer: {
+        port:9000,
+        static: {
+            directory: outputDirectoryPath
+        },
+        devMiddleware: {
+            index: 'index.html',
+            writeToDisk: true
+        }
+    },
     module: {
         rules: [
             {
